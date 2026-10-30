@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #17152B;
+    color: #F5F4FA;
+    font-family: 'Poppins', sans-serif;
+    padding: 32px 20px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    user-select: none;
+}
+
+.title h1 {
+    color: #C8BFFF;
+    font-size: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 0;
+    max-width: 90%;
+    gap: 12px;
+    user-select: none;
+}
+
+.container div {
+    background-color: #211f3ea7;
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.container p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tabuleiro {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.item {
+    display: flex;
+    background-color: #29263F;
+    color: #F5F4FA;
+    font-size: 45px;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    border: 3px #3c385c solid;
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.664);
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.item:hover {
+    transform: translateY(-4px);
+}
+
+.vitoria {
+    display: none;
+    background-color: #211F3E;
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 20;
+    user-select: none;
+} 
+
+.container_vitoria {
+    padding: 10px 20px;
+}
+
+.container_vitoria span {
+    font-size: 22px;
+}
+
+.container_vitoria h1 {
+    font-size: 22px;
+    color: #BDB4F2;
+    padding: 10px 0;
+}
+
+.container_vitoria p {
+    font-size: 16px;
+}
+
+.vitoria hr {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #4a4570;
+    border: none;
+    height: 2px;
+    margin-bottom: 10px;
+}
+
+button {
+    height: 50px;
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #7565C9;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s;
+    user-select: none;
+}
+
+#mensagem {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#mensagem:empty {
+    display: none;
+}
+
+.jogo.desfocado {
+    filter: blur(5px);
+}
+
+.btn-reiniciar {
+    display: block;
+    width: 90%;
+    max-width: 310px;
+    position: relative;
+    margin: 10px auto 0;
+    transform: none;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background-color: white;
+    color: #7565C9;
+}
+
+#tentativas,
+#tempo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: #BDB4F2;
+}
+
+#Vtentativas,
+#Vtempo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#confetes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.confete {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 12px;
+    animation: cair 3s linear forwards;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+@media (max-width: 480px) {
+    #tabuleiro {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vitoria {
+        width: 85%;
+        max-width: 350px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}

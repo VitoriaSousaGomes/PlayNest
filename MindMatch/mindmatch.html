@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="confetes"></div>
+
+    <div class="jogo">
+        <div class="title">
+            <h1>MindMatch</h1>
+            <p>Encontre todos os pares!</p>
+        </div>
+        <section class="container">
+            <div>
+                <h3>Tentativas</h3>
+                <p id="contadorTentativas">0</p>
+            </div>
+            <div>
+                <h3>Pares</h3>
+                <p id="pares">0/4</p>
+            </div>
+            <div>
+                <h3>Tempo</h3>
+                <p id="contadorTempo">00:00</p>
+            </div>
+        </section>
+        <section id="tabuleiro">
+        </section>
+
+        <button id="reiniciar" class="btn-reiniciar">REINICIAR</button>
+    </div>
+
+    <div class="vitoria">
+        <div class="container_vitoria">
+            <span>🏆</span>
+            <h1>Você venceu!</h1>
+            <p>Parabéns por encontrar todos os pares</p>
+        </div>
+        <hr>
+        <p id="tentativas">Tentativas <span id="Vtentativas"></span></p>
+        <p id="tempo">Tempo <span id="Vtempo"></span></p>
+        <button id="novoJogo">NOVO JOGO</button>
+    </div>
+    <p id="mensagem"></p>
+
+</body>
+<script src="script.js"></script>
+</html>
